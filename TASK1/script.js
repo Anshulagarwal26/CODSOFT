@@ -27,13 +27,13 @@ if (typing) {
 
     let speed = 120;
 
-    // Stop after full word is typed
+   
     if (!isDeleting && charIndex === currentWord.length) {
       speed = 1800;
       isDeleting = true;
     }
 
-    // Move to next word
+   
     if (isDeleting && charIndex === 0) {
       isDeleting = false;
       wordIndex = (wordIndex + 1) % words.length;
@@ -45,9 +45,7 @@ if (typing) {
   typeEffect();
 }
 
-// ================================
-// Active Navbar Link
-// ================================
+
 
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll("header nav a");
@@ -73,9 +71,7 @@ function setActiveSection() {
 window.addEventListener("scroll", setActiveSection, { passive: true });
 setActiveSection();
 
-// ================================
-// Back To Top Button
-// ================================
+
 
 const topBtn = document.getElementById("topBtn");
 
@@ -92,9 +88,7 @@ if (topBtn) {
   });
 }
 
-// ================================
-// Smooth Scroll
-// ================================
+
 
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
@@ -109,9 +103,6 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   });
 });
 
-// ================================
-// Fade In Animation (Reveal)
-// ================================
 
 const revealElements = document.querySelectorAll(
   ".about,.skills,.education,.projects,.contact"
@@ -130,14 +121,14 @@ function reveal() {
   });
 }
 
-// Initial style (only for existing elements)
+
 revealElements.forEach((element) => {
   element.style.opacity = "0";
   element.style.transform = "translateY(50px)";
   element.style.transition = "all .8s ease";
 });
 
-// Run after load + on scroll
+
 window.addEventListener("scroll", reveal, { passive: true });
 window.addEventListener("load", reveal);
 reveal();
